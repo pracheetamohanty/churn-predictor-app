@@ -98,7 +98,7 @@ with st.container():
             # Gauge-like visual using a progress bar
             st.write("### Risk Probability")
             st.metric(label="Churn Risk", value=f"{prob:.1%}", delta=f"{'High' if prob > 0.5 else 'Low'} Risk", delta_color="inverse")
-            st.progress(prob)
+            st.progress(float(prob))
             
             if prob > 0.5:
                 st.error("⚠️ ACTION NEEDED: High probability of churn!")
